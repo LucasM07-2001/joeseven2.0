@@ -177,8 +177,8 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "JoeSeven",
           url: "https://joeseven.dev",
-          logo: "https://joeseven.dev/logo.png",
-          image: "https://joeseven.dev/og-image.svg",
+          logo: "https://joeseven.dev/j7pf.svg",
+          image: "https://joeseven.dev/previa.svg",
           description:
             "Empresa especializada em desenvolvimento web, landing pages, sistemas personalizados, automações e marketing digital.",
 
@@ -190,7 +190,7 @@ export const Route = createFileRoute("/")({
             "Desenvolvimento Web",
             "Landing Pages",
             "Sistemas Web",
-            "React",
+            "React", 
             "Node.js",
             "SEO",
             "Marketing Digital",
@@ -943,13 +943,13 @@ function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid gap-6 md:grid-cols-3"
+          className="mt-14 grid min-w-0 grid-cols-1 gap-6 md:grid-cols-3"
         >
           {TESTIMONIALS.map((t) => (
             <motion.figure
               key={t.name}
               variants={fadeUp}
-              className="surface-card flex h-full flex-col p-7"
+              className="surface-card flex h-full min-w-0 flex-col p-7"
             >
               <Quote className="text-primary/30 h-8 w-8" />
               <blockquote className="text-foreground/90 mt-4 flex-1 text-base leading-relaxed">
@@ -963,11 +963,11 @@ function Testimonials() {
                     .slice(0, 2)
                     .join("")}
                 </div>
-                <figcaption className="min-w-0">
+                <figcaption className="min-w-0 flex-1">
                   <div className="text-foreground truncate text-sm font-semibold">{t.name}</div>
                   <div className="text-muted-foreground truncate text-xs">{t.role}</div>
                 </figcaption>
-                <div className="ml-auto flex gap-0.5">
+                <div className="ml-auto flex shrink-0 gap-0.5">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                   ))}
