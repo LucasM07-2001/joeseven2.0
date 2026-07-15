@@ -1,0 +1,45 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220" />
+      <stop offset="0.5" stop-color="#0E2659" />
+      <stop offset="1" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="accent" x1="240" y1="160" x2="720" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA" />
+      <stop offset="1" stop-color="#A78BFA" />
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="28" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="48" fill="url(#bg)" />
+  <circle cx="980" cy="120" r="150" fill="#60A5FA" fill-opacity="0.12" filter="url(#blur)" />
+  <circle cx="240" cy="520" r="170" fill="#A78BFA" fill-opacity="0.12" filter="url(#blur)" />
+  <circle cx="1040" cy="500" r="120" fill="#22C55E" fill-opacity="0.08" filter="url(#blur)" />
+
+  <rect x="84" y="84" width="1032" height="462" rx="36" fill="white" fill-opacity="0.04" stroke="white" stroke-opacity="0.12" />
+
+  <g transform="translate(140 140)">
+    <rect x="0" y="0" width="124" height="124" rx="30" fill="url(#accent)" />
+    <path d="M34 34C34 31.7909 35.7909 30 38 30H62.5C75.4797 30 84 37.9437 84 49.25C84 56.3441 80.6166 62.2353 74.2598 65.2676L83.5 89H67.375L59.5 68.2656H49V89H34V34ZM49 43.2344V55.5312H60.5C66.8461 55.5312 70.1094 52.1719 70.1094 47.375C70.1094 42.5781 66.8461 43.2344 60.5 43.2344H49Z" fill="white" fill-opacity="0.96" />
+    <path d="M24 89L49 30" stroke="white" stroke-opacity="0.22" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <g transform="translate(330 156)">
+    <text x="0" y="0" fill="white" fill-opacity="0.78" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="3">JOESEVEN</text>
+    <text x="0" y="92" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" letter-spacing="-1.5">Desenvolvimento Web</text>
+    <text x="0" y="158" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" letter-spacing="-1.5">Landing Pages e Sistemas</text>
+    <text x="0" y="228" fill="white" fill-opacity="0.82" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400">
+      Sites profissionais, automações, SEO e marketing digital para empresas que querem crescer.
+    </text>
+
+    <g transform="translate(0 292)">
+      <rect x="0" y="0" width="170" height="48" rx="24" fill="white" fill-opacity="0.12" />
+      <text x="85" y="31" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">JoeSeven</text>
+      <rect x="188" y="0" width="232" height="48" rx="24" fill="white" fill-opacity="0.08" />
+      <text x="304" y="31" text-anchor="middle" fill="white" fill-opacity="0.9" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600">Soluções digitais sob medida</text>
+    </g>
+  </g>
+</svg>
