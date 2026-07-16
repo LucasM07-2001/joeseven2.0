@@ -104,11 +104,11 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:url",
-        content: "https://joeseven.dev",
+        content: "https://www.joeseven.com.br",
       },
       {
         property: "og:image",
-        content: "https://joeseven.dev/og-image.svg",
+        content: "https://www.joeseven.com.br/og-image.png",
       },
       {
         property: "og:image:width",
@@ -140,7 +140,7 @@ export const Route = createFileRoute("/")({
       },
       {
         name: "twitter:image",
-        content: "https://joeseven.dev/og-image.svg",
+        content: "https://www.joeseven.com.br/og-image.png",
       },
 
       // Mobile
@@ -157,7 +157,7 @@ export const Route = createFileRoute("/")({
     links: [
       {
         rel: "canonical",
-        href: "https://joeseven.dev",
+        href: "https://www.joeseven.com.br",
       },
       {
         rel: "icon",
@@ -177,8 +177,8 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "JoeSeven",
           url: "https://joeseven.com.br",
-          logo: "https://joeseven.com.br/j7pf.svg",
-          image: "https://joeseven.com.br/previa.svg",
+          logo: "https://joeseven.com.br/logo.jpg",
+          image: "https://joeseven.com.br/previa.jpg",
           description:
             "Empresa especializada em desenvolvimento web, landing pages, sistemas personalizados, automações e marketing digital.",
 
