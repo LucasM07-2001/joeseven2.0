@@ -176,13 +176,13 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           name: "JoeSeven",
-          url: "https://joeseven.dev",
-          logo: "https://joeseven.dev/j7pf.svg",
-          image: "https://joeseven.dev/previa.svg",
+          url: "https://joeseven.com.br",
+          logo: "https://joeseven.com.br/j7pf.svg",
+          image: "https://joeseven.com.br/previa.svg",
           description:
             "Empresa especializada em desenvolvimento web, landing pages, sistemas personalizados, automações e marketing digital.",
 
-          email: "contato@joeseven.dev",
+          email: "joesevenn7@gmail.com",
 
           areaServed: "Brasil",
 
