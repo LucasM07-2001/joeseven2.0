@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SitemapChar91Char93xmlRouteImport } from './routes/sitemap[ . ]xml'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -28,35 +29,44 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapChar91Char93xmlRoute = SitemapChar91Char93xmlRouteImport.update({
+  id: '/sitemap[ / ]xml',
+  path: '/sitemap[ / ]xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/sitemap[ / ]xml': typeof SitemapChar91Char93xmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/sitemap[ / ]xml': typeof SitemapChar91Char93xmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/sitemap[ / ]xml': typeof SitemapChar91Char93xmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/terms'
+  fullPaths: '/' | '/privacy' | '/terms' | '/sitemap[ / ]xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/terms'
-  id: '__root__' | '/' | '/privacy' | '/terms'
+  to: '/' | '/privacy' | '/terms' | '/sitemap[ / ]xml'
+  id: '__root__' | '/' | '/privacy' | '/terms' | '/sitemap[ / ]xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  SitemapChar91Char93xmlRoute: typeof SitemapChar91Char93xmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap[ / ]xml': {
+      id: '/sitemap[ / ]xml'
+      path: '/sitemap[ / ]xml'
+      fullPath: '/sitemap[ / ]xml'
+      preLoaderRoute: typeof SitemapChar91Char93xmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  SitemapChar91Char93xmlRoute: SitemapChar91Char93xmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

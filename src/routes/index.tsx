@@ -434,6 +434,25 @@ function Services() {
   );
 }
 
+/* ------------------------------ Scroll suave ------------------------------ */
+// Faz o scroll até a seção sem nunca adicionar #hash na URL.
+const HEADER_OFFSET = 88; // altura do header fixo + respiro
+
+function scrollToSection(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
+  e.preventDefault();
+
+  if (id === "top") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const targetY = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  window.scrollTo({ top: targetY, behavior: "smooth" });
+}
+
 /* --------------------------------- Navbar -------------------------------- */
 
 const NAV_LINKS = [
@@ -463,7 +482,12 @@ function Navbar() {
         }`}
     >
       <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="flex items-center gap-2" aria-label="JoeSeven — Início">
+        <a
+          href="#top"
+          onClick={(e) => scrollToSection(e, "top")}
+          className="flex items-center gap-2"
+          aria-label="JoeSeven — Início"
+        >
           <LogoMark className="h-9 w-9 object-contain" />
           <span className="font-display text-lg font-bold tracking-tight">JoeSeven</span>
         </a>
@@ -473,6 +497,7 @@ function Navbar() {
             <a
               key={l.href}
               href={l.href}
+              onClick={(e) => scrollToSection(e, l.href.replace("#", ""))}
               className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
             >
               {l.label}
@@ -483,6 +508,7 @@ function Navbar() {
         <div className="hidden md:block">
           <a
             href="#cta"
+            onClick={(e) => scrollToSection(e, "cta")}
             className="bg-gradient-brand inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-elegant)] transition-transform hover:-translate-y-0.5"
           >
             Solicitar orçamento
@@ -508,7 +534,10 @@ function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  scrollToSection(e, l.href.replace("#", ""));
+                  setOpen(false);
+                }}
                 className="text-foreground/80 hover:bg-muted rounded-lg px-3 py-3 text-sm font-medium"
               >
                 {l.label}
@@ -516,7 +545,10 @@ function Navbar() {
             ))}
             <a
               href="#cta"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                scrollToSection(e, "cta");
+                setOpen(false);
+              }}
               className="bg-gradient-brand mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white"
             >
               Solicitar orçamento <ArrowRight className="h-4 w-4" />
@@ -600,6 +632,7 @@ function Hero() {
           >
             <a
               href="#cta"
+              onClick={(e) => scrollToSection(e, "cta")}
               className="bg-gradient-brand group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-elegant)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] sm:w-auto"
             >
               Solicitar orçamento
@@ -1210,7 +1243,12 @@ function Footer() {
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <a href="#top" className="flex items-center gap-2" aria-label="JoeSeven — Início">
+            <a
+              href="#top"
+              onClick={(e) => scrollToSection(e, "top")}
+              className="flex items-center gap-2"
+              aria-label="JoeSeven — Início"
+            >
               <LogoMark className="h-9 w-9 object-contain" />
               <span className="font-display text-lg font-bold tracking-tight">JoeSeven | Soluções Web</span>
             </a>
@@ -1257,6 +1295,7 @@ function Footer() {
                 <li key={l.href}>
                   <a
                     href={l.href}
+                    onClick={(e) => scrollToSection(e, l.href.replace("#", ""))}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {l.label}

@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import brandLogoUrl from "../image/j7pf.svg";
 
 export const Route = createFileRoute("/privacy")({
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
     ],
-    links: [{ rel: "canonical", href: "https://joeseven.dev/privacy" }],
+    links: [{ rel: "canonical", href: "https://www.joeseven.com.br/privacy" }],
   }),
   component: PrivacyPolicyPage,
 });
@@ -81,9 +82,24 @@ function PrivacyPolicyPage() {
     },
   ];
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <main className="bg-background text-foreground min-h-screen">
-      <header className="border-b border-border/60 bg-background/90 backdrop-blur">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "border-b border-border/60 bg-background/75 backdrop-blur-xl"
+            : "border-b border-border/60 bg-background/90 backdrop-blur"
+        }`}
+      >
         <div className="container-page flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2" aria-label="JoeSeven - Início">
             <img src={brandLogoUrl} alt="JoeSeven" className="h-9 w-9 object-contain" />
@@ -97,6 +113,9 @@ function PrivacyPolicyPage() {
           </Link>
         </div>
       </header>
+
+      {/* Espaçador para compensar o header agora fixo */}
+      <div className="h-16" aria-hidden="true" />
 
       <section className="border-b border-border/60 bg-surface/40">
         <div className="container-page py-16 md:py-24">
