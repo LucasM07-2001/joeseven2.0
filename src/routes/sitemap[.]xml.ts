@@ -9,7 +9,7 @@ const pages = [
   { path: '/terms', changefreq: 'yearly', priority: '0.3' },
 ]
 
-export const Route = createFileRoute('/sitemap[ / ]xml')({
+export const Route = createFileRoute('/sitemap.xml')({
   server: {
     handlers: {
       GET: async () => {

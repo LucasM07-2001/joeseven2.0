@@ -600,15 +600,7 @@ function Hero() {
           animate="visible"
           className="mx-auto max-w-4xl text-center"
         >
-          <motion.div variants={fadeUp} className="flex justify-center">
-            <span className="border-border/80 bg-background/70 text-muted-foreground inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-60" />
-                <span className="bg-primary relative inline-flex h-2 w-2 rounded-full" />
-              </span>
-              Disponível para novos projetos · 2026
-            </span>
-          </motion.div>
+       
 
           <motion.h1
             variants={fadeUp}
